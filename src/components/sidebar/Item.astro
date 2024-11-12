@@ -1,0 +1,9 @@
+---
+interface Props {
+  name: string;  // Enforces a string type for the `name` prop
+  link: string;
+}
+
+const { link, name } = Astro.props;
+---
+<li><a href={link} ="t-dashboards">{name}</a></li>

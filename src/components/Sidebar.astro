@@ -1,5 +1,9 @@
 ---
 
+import Category from "./sidebar/Category.astro"
+
+import ListItem from "./sidebar/ListItem.astro"
+import Item from "./sidebar/Item.astro"
 ---
 <sidebar>
   	  <!-- Begin page -->
@@ -57,6 +61,7 @@
                     </div>
                 </div>
             </header>
+
             <!-- ========== Left Sidebar Start ========== -->
             <div class="vertical-menu">
                 <div data-simplebar class="h-100">
@@ -65,51 +70,19 @@
                         <!-- Left Menu Start -->
                         <ul class="metismenu list-unstyled" id="side-menu">
                             <p><a href="/" class="d-inline-flex focus-ring focus-ring-primary py-1 px-2 text-decoration-none border rounded-2">Menu</a></p>
-                            <li class="menu-title" ="t-apps"> Asset Management </li>
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bxs-building"></i>
-                                    <span ="bi bi-card-list"> Asset Management</span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">				
-                                    <li><a href="/endpoint" ="t-dashboards">Endpoint | Server </a></li>
-                                    <li><a href="/webserver" ="t-dashboards">Web Server</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-title" ="t-apps"> Report </li>
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bxs-report"></i>
-                                    <span ="bi bi-card-list">Generate Report </span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">				
-                                    <li><a href="/reportshift" ="t-dashboards">Generate Report per Shift </a></li>
-                                    <li><a href="/reportr2" ="t-dashboards">Generate Report R2 Only</a></li>
-                                    <li><a href="/maintenance" ="t-dashboards">Generate Report Bulanan</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-title" ="t-apps"> Monitoring </li>
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-desktop"></i>
-                                    <span ="t-dashboards">Live Monitoring </span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">				
-                                    <li><a href="/monitoring1" ="t-dashboards">Attack, DNS, Malware</a></li>
-                                    <li><a href="/monitoring2" ="t-dashboards">SSH, RDP, SMB</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-title" ="t-apps"> Event </li>
-                            <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                    <i class="bx bx-list-ul"></i>
-                                    <span ="t-dashboards"> Create Event </span>
-                                </a>
-                                <ul class="sub-menu" aria-expanded="false">				
-                                    <li><a href="/maintenance" ="t-dashboards">Discord</a></li>
-                                    <li><a href="/workbench" ="t-dashboards">Workbench</a></li>
-                                </ul>
-                            </li>
+                            <!-- Category -->
+                             <Category><slot name="category">Genre</slot></Category>
+                             <ListItem name="Drum And Bass">
+                                <Item link="endpoint" name="Endpoint"/>
+                                <Item link="webserver" name="Server"/>
+                             </ListItem>
+
+                             <Category>Playlist</Category>
+                             <ListItem  name="Starboy Vibes">
+                                <Item link="endpoint" name="Endpoint"/>
+                                <Item link="webserver" name="Server"/>
+                             </ListItem>
+                            
                             <li>
                                 <a class="dropdown-item text-danger" href="/login"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span ="t-logout">Logout</span></a>
                                 <a class="dropdown-item text-danger" href="/login"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> <span ="t-logout">login</span></a>
